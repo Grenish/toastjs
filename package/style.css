@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.toast{
+    position: relative;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    max-width: 200px;
+    cursor: pointer;
+    transform: translateX(120%);
+    transition: transform 250ms ease-in-out;
+    overflow: hidden;
+}
+
+.toast-container[data-position$="-right"] .toast{
+    transform: translateX(120%);
+}
+
+.toast-container[data-position$="-left"] .toast{
+    transform: translateX(-120%);
+}
+
+.toast-container[data-position$="top-center"] .toast{
+    transform: translateY(-110vh);
+}
+
+.toast-container[data-position$="bottom-center"] .toast{
+    transform: translateY(110vh);
+}
+
+.toast-container .toast.show{
+    transform: translate(0, 0);
+}
+
+.toast.progress::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: calc(100% * var(--progress));
+    height: 3px;
+    background-color: #ff0000;
+    /* animation: progress 3s linear infinite; */
+}
+
+.toast.can-close:after{
+    content: "\00d7";
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
+.toast-container{
+    position: fixed;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-container[data-position^="top-"]{
+    top: 0px;
+}
+
+.toast-container[data-position$="-right"]{
+    right: 0px;
+}
+
+.toast-container[data-position^="bottom-"]{
+    bottom: 0px;
+}
+
+.toast-container[data-position$="-left"]{
+    left: 0px;
+}
+
+.toast-container[data-position$="-center"]{
+    left: 50%;
+    transform: translateX(-50%);
+}
