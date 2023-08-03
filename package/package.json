@@ -1,6 +1,6 @@
 {
   "name": "@grenishrai/toastjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A javascript library for the toast.",
   "main": "script.js",
   "scripts": {
@@ -18,5 +18,5 @@
   "bugs": {
     "url": "https://github.com/Grenish/toastjs/issues"
   },
-  "homepage": "https://github.com/Grenish/toastjs#readme"
+  "homepage": "https://github.com/Grenish/toastjs/blob/main/package/README.md"
 }
