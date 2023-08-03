@@ -1,0 +1,22 @@
+{
+  "name": "@grenishrai/toastjs",
+  "version": "1.0.0",
+  "description": "A javascript library for the toast.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grenish/toastjs.git"
+  },
+  "keywords": [
+    "toast"
+  ],
+  "author": "grenishrai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grenish/toastjs/issues"
+  },
+  "homepage": "https://github.com/Grenish/toastjs#readme"
+}

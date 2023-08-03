@@ -11,9 +11,11 @@ export default class Toast {
   #autoCloseTimeOut;
   #progressInterval;
   #removeBinded;
-  #visibleSince;
+  #timeVisible = 0;
   #autoClose;
-  #paused = false;
+  #pause;
+  #unpause;
+  #isPaused = false;
 
   constructor(options) {
     this.#toastElem = document.createElement("div");
@@ -23,14 +25,13 @@ export default class Toast {
       this.#toastElem.classList.add("show");
     });
     this.#removeBinded = this.remove.bind(this);
-    this.#unpause = () => this.#pause = false;
-    this.#pause = () => this.#pause = true;
+    this.#unpause = () => (this.#isPaused = false);
+    this.#pause = () => (this.#isPaused = true);
     this.update({ ...DEFAULT_OPTIONS, ...options });
   }
 
   set autoClose(value) {
     this.#autoClose = value;
-    this.#visibleSince = new Date();
 
     if (value === false) return;
     if (this.#autoCloseTimeOut != null) clearTimeout(this.#autoCloseTimeOut);
@@ -74,13 +75,17 @@ export default class Toast {
     this.#toastElem.style.setProperty("--progress", 1);
 
     if (value) {
+      let lastTimeCalled = new Date();
       this.#progressInterval = setInterval(() => {
-        const timeVisible = new Date() - this.#visibleSince;
-        const remainingTime = this.#autoClose - timeVisible;
-        this.#toastElem.style.setProperty(
-          "--progress",
-          remainingTime / this.#autoClose
-        );
+        if (!this.#isPaused) {
+          this.#timeVisible += new Date() - lastTimeCalled;
+          const remainingTime = this.#autoClose - this.#timeVisible;
+          this.#toastElem.style.setProperty(
+            "--progress",
+            remainingTime / this.#autoClose
+          );
+        }
+        lastTimeCalled = new Date();
       }, 10);
     }
   }
