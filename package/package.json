@@ -1,6 +1,6 @@
 {
   "name": "@grenishrai/toastjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A javascript library for the toast.",
   "main": "script.js",
   "scripts": {
