@@ -4,3 +4,6 @@ ToastJS is a lightweight JavaScript library that allows you to display customiza
 ## Installation
 
 To use ToastJS in your project, you can either download the library and include it in your HTML file or install it using npm:
+```
+npm i @grenishrai/toastjs
+```
