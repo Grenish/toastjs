@@ -11,7 +11,7 @@ npm i @grenishrai/toastjs
 ### Creating a Toast
 To create a toast notification, first, import the Toast class and create an instance with custom options:
 ```
-import Toast from "toastjs";
+import Toast from "@grenishrai/toastjs";
 
 const options = {
   text: "Hello, ToastJS!", // The content of the toast
@@ -52,7 +52,7 @@ Here's a simple example of using ToastJS to display a notification when a button
   <button id="showToastBtn">Show Toast</button>
 
   <script type="module">
-    import Toast from "toastjs";
+    import Toast from "@grenishrai/toastjs";
 
     document.getElementById("showToastBtn").addEventListener("click", () => {
       const options = {
