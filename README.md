@@ -7,3 +7,5 @@ To use ToastJS in your project, you can either download the library and include 
 ```
 npm i @grenishrai/toastjs
 ```
+## Usage
+### Creating a Toast
